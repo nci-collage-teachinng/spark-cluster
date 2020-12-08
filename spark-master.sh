@@ -7,10 +7,10 @@ sudo mv spark-3.0.1-bin-hadoop3.2 /opt/spark
 echo "export SPARK_HOME=/opt/spark" >> ~/.profile
 echo "export PATH=$PATH:/opt/spark/bin:/opt/spark/sbin" >> ~/.profile
 echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
+source ~/.profile
 sudo apt-get install -y openssh-server openssh-client
 cd opt/spark/conf/
 cp spark-env.sh.template spark-env.sh
 cp slave.template slave
 ssh-keygen -t rsa -P ""
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-source ~/.profile
